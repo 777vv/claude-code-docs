@@ -27,7 +27,7 @@
 
 ```bash
 # 克隆项目
-git clone <your-repo-url>
+git clone https://github.com/777vv/claude-code-docs.git
 cd claude-code-docs
 
 # 安装依赖
