@@ -107,6 +107,12 @@ export default defineConfig({
           { text: '27. 资源链接', link: '/tips/resources' },
         ]
       },
+      {
+        text: '学习与交流',
+        items: [
+          { text: '加入交流群', link: '/community' },
+        ]
+      },
     ],
 
     socialLinks: [
