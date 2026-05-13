@@ -77,6 +77,12 @@ npm run preview
 - **Vercel / Netlify**：构建命令 `npm run build`，发布目录 `docs/.vitepress/dist`
 - **自有服务器**：将 `dist/` 目录内容放到 Nginx / Caddy 静态目录
 
+## 学习交流群
+
+欢迎扫码加入学习交流群，一起探讨 Claude Code 使用技巧：
+
+<img src="docs/public/qun.png" alt="学习交流群二维码" width="200"/>
+
 ## 贡献 & 反馈
 
 文档内容如有错误或过期信息，欢迎提 Issue 或 PR。
