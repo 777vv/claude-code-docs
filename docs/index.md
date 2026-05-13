@@ -84,4 +84,11 @@ features:
 | **实战案例** | 全栈项目搭建、遗留代码重构、复杂 Bug 调试 |
 | **技巧与参考**（21-27）| 最佳实践、常见工作流、并行自动化、IDE 集成、故障排除、术语表 |
 
+## 学习交流群
+
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:20px;margin-bottom:8px">
+  <img src="/qun.png" alt="学习交流群二维码" style="width:180px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12)"/>
+  <div style="font-size:14px;color:var(--vp-c-text-2)">扫码加入学习交流群，一起探讨 Claude Code 使用技巧</div>
+</div>
+
 </div>
