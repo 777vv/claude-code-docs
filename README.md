@@ -2,6 +2,8 @@
 
 一份面向中文用户的 Claude Code 系统学习文档，基于 [VitePress](https://vitepress.dev/) 构建，覆盖从安装入门到生产实战的完整知识体系。
 
+**在线阅读：** https://claude-code-docs-d7esd1zeb50d77a-1310838266.tcloudbaseapp.com
+
 ## 内容概览
 
 | 章节 | 涵盖内容 |
