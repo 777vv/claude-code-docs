@@ -5,6 +5,9 @@ hero:
   name: "Claude Code"
   text: "中文学习站"
   tagline: 从零开始掌握 Anthropic 官方 AI 编码助手 · 27 章节 · 新手友好 · 持续更新
+  image:
+    src: /hero-terminal.svg
+    alt: Claude Code 终端演示
   actions:
     - theme: brand
       text: 快速开始 →
@@ -12,6 +15,9 @@ hero:
     - theme: alt
       text: 从头学起
       link: /guide/intro
+    - theme: alt
+      text: 源码地址
+      link: https://github.com/777vv/claude-code-docs
 
 features:
   - icon: 🤖

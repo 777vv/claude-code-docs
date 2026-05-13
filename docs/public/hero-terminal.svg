@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 336" width="560" height="392" role="img" aria-label="Claude Code 终端演示">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="rgba(0,0,0,0.45)"/>
+    </filter>
+    <clipPath id="terminal-clip">
+      <rect width="480" height="336" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Terminal window -->
+  <rect width="480" height="336" rx="12" fill="#1c1b19" filter="url(#shadow)"/>
+
+  <!-- Title bar -->
+  <rect width="480" height="38" rx="12" fill="#252320" clip-path="url(#terminal-clip)"/>
+  <rect y="26" width="480" height="12" fill="#252320"/>
+
+  <!-- Traffic lights -->
+  <circle cx="22" cy="19" r="6" fill="#ff5f57"/>
+  <circle cx="44" cy="19" r="6" fill="#febc2e"/>
+  <circle cx="66" cy="19" r="6" fill="#28c840"/>
+
+  <!-- Window title -->
+  <text x="240" y="24" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#7a7870">claude — ~/my-project</text>
+
+  <!-- ── Shell prompt ── -->
+  <text x="18" y="67" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#28c840">❯</text>
+  <text x="34" y="67" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#f0eee6">claude</text>
+
+  <!-- Connected notice -->
+  <text x="18" y="89" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#c6613f">◆</text>
+  <text x="32" y="89" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#b0ad9f">Claude Code  ·  claude-sonnet-4-6</text>
+
+  <!-- Divider -->
+  <line x1="18" y1="103" x2="462" y2="103" stroke="#3a3834" stroke-width="1"/>
+
+  <!-- ── User message ── -->
+  <text x="18" y="124" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#6b9bd2">›</text>
+  <text x="30" y="124" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#f0eee6">帮我给这个项目写单元测试</text>
+
+  <!-- Claude reply text -->
+  <text x="18" y="146" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#d97757">●</text>
+  <text x="32" y="146" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#b0ad9f">好的，先扫描项目结构...</text>
+
+  <!-- ── Tool call: Read ── -->
+  <rect x="18" y="156" width="444" height="24" rx="5" fill="#252320"/>
+  <text x="30" y="172" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#febc2e">Read</text>
+  <text x="73" y="172" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#b0ad9f">src/user.ts  src/auth.ts  src/api.ts</text>
+
+  <!-- ── Tool call: Write 1 ── -->
+  <rect x="18" y="184" width="444" height="24" rx="5" fill="#252320"/>
+  <text x="30" y="200" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#febc2e">Write</text>
+  <text x="77" y="200" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#28c840">+ tests/user.test.ts</text>
+
+  <!-- ── Tool call: Write 2 ── -->
+  <rect x="18" y="212" width="444" height="24" rx="5" fill="#252320"/>
+  <text x="30" y="228" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#febc2e">Write</text>
+  <text x="77" y="228" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#28c840">+ tests/auth.test.ts</text>
+
+  <!-- ── Tool call: Bash ── -->
+  <rect x="18" y="240" width="444" height="24" rx="5" fill="#252320"/>
+  <text x="30" y="256" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#febc2e">Bash</text>
+  <text x="73" y="256" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#b0ad9f">npm test</text>
+
+  <!-- Divider -->
+  <line x1="18" y1="272" x2="462" y2="272" stroke="#3a3834" stroke-width="1"/>
+
+  <!-- ── Success ── -->
+  <text x="18" y="293" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#28c840">✓</text>
+  <text x="32" y="293" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#f0eee6">8 个测试已创建，全部通过  (1.3s)</text>
+
+  <!-- ── Next prompt + blinking cursor ── -->
+  <text x="18" y="318" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#6b9bd2">›</text>
+  <rect x="30" y="306" width="7" height="14" rx="1" fill="#c6613f">
+    <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

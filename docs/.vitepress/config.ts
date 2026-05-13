@@ -13,6 +13,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    logo: '/logo.png',
     siteTitle: 'Claude Code 学习站',
 
     nav: [

@@ -223,6 +223,12 @@
 /* ============================================================
    首页 Hero
    ============================================================ */
+.VPHero .image-container {
+  transform: scale(1.09);
+  transform-origin: center center;
+  margin-left: 65px !important;
+}
+
 .VPHero .name {
   background: linear-gradient(135deg, #c6613f 0%, #d97757 50%, #e8906d 100%);
   -webkit-background-clip: text;
