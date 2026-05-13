@@ -1,0 +1,43 @@
+# 依赖
+node_modules/
+
+# VitePress 构建产物 & 缓存
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# 环境变量（含敏感信息，绝不提交）
+.env
+.env.local
+.env.*.local
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 编辑器 & IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.idea
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# 本地覆盖配置
+*.local
+
