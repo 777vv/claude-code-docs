@@ -16,8 +16,11 @@ hero:
       text: 从头学起
       link: /guide/intro
     - theme: alt
-      text: 源码地址
-      link: https://github.com/777vv/claude-code-docs
+      text: Github源码
+      link: https://github.com/777vv/claude-chinese-docs
+    - theme: alt
+      text: Gitee源码
+      link: https://gitee.com/vv777/claude-chinese-docs
 
 features:
   - icon: 🤖
