@@ -41,3 +41,17 @@ $RECYCLE.BIN/
 # 本地覆盖配置
 *.local
 
+# 审计报告本地输出（upstream-snapshots.json 保留以对比，其它本地报告不进 git）
+audit-reports/update-report-*.md
+audit-reports/*.tmp
+
+# 调试截图（playwright / 本地调试产生的）
+/*.png
+
+# Playwright MCP 本地调试输出（console log / snapshot / 截图）
+.playwright-mcp/
+
+# Claude Code 本地用户设置（per-user，不入库）
+.claude/settings.local.json
+
+articles/

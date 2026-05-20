@@ -221,6 +221,25 @@
 }
 
 /* ============================================================
+   顶栏站点标题（AI 学习站）
+   ============================================================ */
+.VPNavBarTitle .logo {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.VPNavBarTitle .title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  color: #c6613f !important;
+}
+
+.dark .VPNavBarTitle .title {
+  color: #e8906d !important;
+}
+
+/* ============================================================
    首页 Hero
    ============================================================ */
 .VPHero .image-container {
@@ -236,8 +255,31 @@
   background-clip: text;
 }
 
+/* Hero 主标语（渐变 + 字号 + 字距 + 行高）
+   句子: 把重复的工作交给 AI，把思考留给自己 */
+.VPHero .text {
+  font-size: clamp(38px, 4.6vw, 56px) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #c6613f 0%, #d97757 45%, #e8906d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .VPHero .text {
+  background: linear-gradient(135deg, #e8906d 0%, #f0a78a 45%, #f5b59c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .VPHero .tagline {
   color: var(--vp-c-text-2);
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  margin-top: 12px !important;
 }
 
 /* Hero 按钮 */
