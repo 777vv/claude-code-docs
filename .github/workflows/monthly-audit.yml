@@ -1,0 +1,221 @@
+name: 月度文档审计
+
+# 跑两件事:
+#   1. 上游源 hash 对比 → 发现显著变化提 issue 通知 maintainer
+#   2. 死链检查 → 有死链提 issue
+# 不调用任何 LLM (省钱 + 安全)
+# 完整 LLM 审计请 maintainer 本地跑 `npm run audit:full`
+
+on:
+  schedule:
+    - cron: "0 2 1 * *"   # UTC 凌晨 2 点（北京 10 点）每月 1 号
+  workflow_dispatch:      # 允许手动触发
+    inputs:
+      scope:
+        description: "扫哪个工具（all / claude-code / codex / openclaw / hermes）"
+        default: "all"
+
+permissions:
+  contents: read
+  issues: write           # 用于自动开 issue
+
+jobs:
+  upstream-check:
+    name: 上游变化检测
+    runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.run.outputs.has_changes }}
+      report: ${{ steps.run.outputs.report }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: 跑上游变化检测
+        id: run
+        continue-on-error: true
+        run: |
+          SCOPE="${{ inputs.scope || 'all' }}"
+          ARGS=""
+          if [ "$SCOPE" != "all" ]; then ARGS="$SCOPE"; fi
+
+          OUTPUT=$(node scripts/check-upstream-changes.mjs $ARGS 2>&1) || EXIT=$?
+          EXIT="${EXIT:-0}"
+          echo "$OUTPUT"
+          {
+            echo "report<<EOF"
+            echo "$OUTPUT"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+          if [ "$EXIT" = "1" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 提交快照（snapshots 文件）
+        if: steps.run.outputs.has_changes == 'true' || steps.run.outcome == 'success'
+        run: |
+          if [ -f audit-reports/upstream-snapshots.json ]; then
+            echo "(snapshot 已更新；不自动提交，由 maintainer 决定是否保留)"
+            cat audit-reports/upstream-snapshots.json | head -20
+          fi
+
+      - name: 上传 audit-reports 制品
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-reports-${{ github.run_id }}
+          path: audit-reports/
+          retention-days: 90
+
+  link-check:
+    name: 死链检查
+    runs-on: ubuntu-latest
+    outputs:
+      has_dead: ${{ steps.run.outputs.has_dead }}
+      report: ${{ steps.run.outputs.report }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci || npm install
+
+      - name: 跑死链检查
+        id: run
+        continue-on-error: true
+        run: |
+          OUTPUT=$(node scripts/check-dead-links.mjs 2>&1) || EXIT=$?
+          EXIT="${EXIT:-0}"
+          echo "$OUTPUT"
+          {
+            echo "report<<EOF"
+            echo "$OUTPUT"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+          [ "$EXIT" = "1" ] && echo "has_dead=true" >> $GITHUB_OUTPUT || echo "has_dead=false" >> $GITHUB_OUTPUT
+
+  vitepress-build:
+    name: VitePress 站内死链
+    runs-on: ubuntu-latest
+    outputs:
+      build_ok: ${{ steps.build.outcome == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci || npm install
+      - name: Build
+        id: build
+        run: npm run build
+        continue-on-error: true
+
+  open-issue:
+    name: 发现问题就开 issue
+    needs: [upstream-check, link-check, vitepress-build]
+    runs-on: ubuntu-latest
+    if: |
+      needs.upstream-check.outputs.has_changes == 'true' ||
+      needs.link-check.outputs.has_dead == 'true' ||
+      needs.vitepress-build.outputs.build_ok == 'false'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 准备 issue 正文
+        id: body
+        env:
+          UPSTREAM: ${{ needs.upstream-check.outputs.report }}
+          LINKS: ${{ needs.link-check.outputs.report }}
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          cat > /tmp/issue.md <<'EOF'
+          ## 📋 月度文档审计
+
+          自动跑了 3 项检查，发现需要人工 review 的问题。
+
+          ---
+
+          ### 1. 上游源变化检测
+          EOF
+          if [ "${{ needs.upstream-check.outputs.has_changes }}" = "true" ]; then
+            echo '> 🔴 **发现显著变化**' >> /tmp/issue.md
+            echo '' >> /tmp/issue.md
+            echo '```' >> /tmp/issue.md
+            echo "$UPSTREAM" >> /tmp/issue.md
+            echo '```' >> /tmp/issue.md
+          else
+            echo '> ✅ 无显著变化' >> /tmp/issue.md
+          fi
+
+          cat >> /tmp/issue.md <<'EOF'
+
+          ---
+
+          ### 2. 死链检查
+          EOF
+          if [ "${{ needs.link-check.outputs.has_dead }}" = "true" ]; then
+            echo '> 🔴 **发现死链**' >> /tmp/issue.md
+            echo '' >> /tmp/issue.md
+            echo '```' >> /tmp/issue.md
+            echo "$LINKS" >> /tmp/issue.md
+            echo '```' >> /tmp/issue.md
+          else
+            echo '> ✅ 全部链接 OK' >> /tmp/issue.md
+          fi
+
+          cat >> /tmp/issue.md <<'EOF'
+
+          ---
+
+          ### 3. VitePress 站内死链
+          EOF
+          if [ "${{ needs.vitepress-build.outputs.build_ok }}" = "false" ]; then
+            echo '> 🔴 **VitePress build 失败**（站内死链 / 语法错）' >> /tmp/issue.md
+          else
+            echo '> ✅ 站内 build 通过' >> /tmp/issue.md
+          fi
+
+          cat >> /tmp/issue.md <<'EOF'
+
+          ---
+
+          ## 🛠 下一步建议
+
+          - [ ] 看上面"上游变化"清单，跑 `npm run audit:full` 让 Claude 做完整审计
+          - [ ] 死链找到对应章节修
+          - [ ] VitePress build 失败先修死链 / 语法
+          - [ ] 修完关掉本 issue
+
+          完整审计命令:
+          ```bash
+          npm run audit             # 快速扫
+          npm run audit:full        # 全量 LLM 审计
+          npm run audit:tool hermes # 单工具
+          ```
+
+          ---
+
+          *本 issue 由 .github/workflows/monthly-audit.yml 自动开*
+          EOF
+          echo "path=/tmp/issue.md" >> $GITHUB_OUTPUT
+
+      - name: 开 issue
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "📋 月度文档审计 - ${{ github.run_id }}"
+          content-filepath: ${{ steps.body.outputs.path }}
+          labels: |
+            audit
+            documentation

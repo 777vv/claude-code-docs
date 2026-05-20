@@ -1,0 +1,14 @@
+{
+  "codex/github-readme": {
+    "ok": true,
+    "hash": "da27a49c887c9d52",
+    "size": 2627,
+    "fetched_at": "2026-05-20T00:33:06.888Z"
+  },
+  "codex/releases": {
+    "ok": true,
+    "hash": "dab8ab6ddc957044",
+    "size": 247018,
+    "fetched_at": "2026-05-20T00:33:09.227Z"
+  }
+}

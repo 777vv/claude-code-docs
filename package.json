@@ -1,12 +1,17 @@
 {
-  "name": "claude-code-docs",
+  "name": "ai-learning-docs",
   "version": "1.0.0",
-  "description": "Claude Code 中文学习文档站",
+  "description": "AI 学习站",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "audit": "claude /update all --fast --report-only",
+    "audit:full": "claude /update all --report-only",
+    "audit:tool": "claude /update",
+    "audit:check": "node scripts/check-upstream-changes.mjs",
+    "audit:links": "node scripts/check-dead-links.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.3"
