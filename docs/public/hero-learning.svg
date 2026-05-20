@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <!-- 路径渐变 -->
+    <linearGradient id="pathGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8906d"/>
+      <stop offset="100%" stop-color="#c6613f"/>
+    </linearGradient>
+
+    <!-- 灯塔大光晕（自然消失到透明） -->
+    <radialGradient id="beaconHalo" cx="295" cy="78" r="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffe69a" stop-opacity="0.6"/>
+      <stop offset="30%" stop-color="#f0b454" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#f0b454" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 光束渐变 -->
+    <radialGradient id="beamGrad" cx="295" cy="78" r="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffe69a" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#f0b454" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#f0b454" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 塔身渐变 -->
+    <linearGradient id="towerShade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cfcabd"/>
+      <stop offset="30%" stop-color="#f4f1e8"/>
+      <stop offset="70%" stop-color="#ebe7da"/>
+      <stop offset="100%" stop-color="#b6b0a0"/>
+    </linearGradient>
+
+    <!-- 条纹 -->
+    <linearGradient id="stripeShade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a84f32"/>
+      <stop offset="50%" stop-color="#d97757"/>
+      <stop offset="100%" stop-color="#8f4124"/>
+    </linearGradient>
+
+    <!-- 深色配件 -->
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6a7e96"/>
+      <stop offset="100%" stop-color="#4a5d75"/>
+    </linearGradient>
+
+    <!-- 小人外套 -->
+    <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a84f32"/>
+      <stop offset="50%" stop-color="#d97757"/>
+      <stop offset="100%" stop-color="#9a4528"/>
+    </linearGradient>
+
+    <!-- 头/腿柔色（不再用深色） -->
+    <linearGradient id="figureGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6a7e96"/>
+      <stop offset="100%" stop-color="#4a5d75"/>
+    </linearGradient>
+
+    <!-- 起点辉光 -->
+    <radialGradient id="startGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c6613f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c6613f" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 灯室内光 -->
+    <radialGradient id="lanternInner" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="45%" stop-color="#ffe69a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f7d56a" stop-opacity="0.5"/>
+    </radialGradient>
+
+    <!-- 灯塔底座软影 -->
+    <radialGradient id="lhShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c6613f" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c6613f" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 灯塔投影 -->
+    <filter id="dropShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ============================================================
+       极简版：无云、无山、无海、无波浪、无船、无漂浮点
+       所有元素以渐变到透明的方式漂浮在页面背景上
+       ============================================================ -->
+
+  <!-- 灯塔大光晕（核心氛围） -->
+  <circle cx="295" cy="78" r="200" fill="url(#beaconHalo)"/>
+
+  <!-- 光束 -->
+  <g>
+    <path d="M 285 75 L 170 48 L 170 112 Z" fill="url(#beamGrad)"/>
+    <path d="M 305 75 L 420 48 L 420 112 Z" fill="url(#beamGrad)"/>
+    <path d="M 290 70 L 225 -5 L 285 -5 Z" fill="url(#beamGrad)"/>
+    <path d="M 300 70 L 305 -5 L 370 -5 Z" fill="url(#beamGrad)"/>
+    <path d="M 292 65 L 290 -15 L 300 -15 L 298 65 Z" fill="url(#beamGrad)"/>
+    <path d="M 287 88 L 210 138 L 248 150 Z" fill="url(#beamGrad)"/>
+    <path d="M 303 88 L 342 150 L 380 138 Z" fill="url(#beamGrad)"/>
+  </g>
+
+  <!-- 蜿蜒路径 -->
+  <path d="M 55 360 Q 130 320 90 280 Q 50 240 165 215 Q 280 190 145 175 Q 10 160 235 130 Q 380 105 295 145"
+        stroke="url(#pathGrad)"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-dasharray="2 8"
+        fill="none"/>
+
+  <!-- 未来节点 -->
+  <circle cx="90" cy="280" r="5" fill="#fafaf7" stroke="#d97757" stroke-width="2" opacity="0.9"/>
+  <circle cx="165" cy="215" r="5" fill="#fafaf7" stroke="#d97757" stroke-width="2" opacity="0.9"/>
+  <circle cx="145" cy="175" r="5" fill="#fafaf7" stroke="#d97757" stroke-width="2" opacity="0.9"/>
+  <circle cx="235" cy="130" r="5" fill="#fafaf7" stroke="#d97757" stroke-width="2" opacity="0.9"/>
+
+  <!-- 当前节点 + 多层辉光 -->
+  <circle cx="55" cy="360" r="32" fill="url(#startGlow)"/>
+  <circle cx="55" cy="360" r="20" fill="url(#startGlow)" opacity="0.7"/>
+  <circle cx="55" cy="360" r="12" fill="#fafaf7" stroke="#c6613f" stroke-width="2.5" opacity="0.95"/>
+
+  <!-- 小人 -->
+  <g transform="translate(55, 322)">
+<!--    <rect x="-13" y="0" width="9" height="20" rx="4" fill="url(#navyGrad)"/>-->
+<!--    <line x1="-11" y1="3" x2="-11" y2="-6" stroke="#4a5d75" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>-->
+
+    <path d="M -7 -3 Q 0 -16 7 -3 L 8 20 L -8 20 Z" fill="url(#jacketGrad)"/>
+
+    <circle cx="-1" cy="-22" r="9" fill="url(#figureGrad)"/>
+    <path d="M -7 -27 Q 0 -32 6 -28" stroke="#4a5d75" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+    <path d="M 4 -6 L 14 -20" stroke="#c6613f" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 14 -20 L 0 -24" stroke="#c6613f" stroke-width="4.5" stroke-linecap="round"/>
+
+    <path d="M -6 -4 L -9 14" stroke="#c6613f" stroke-width="4" stroke-linecap="round"/>
+
+    <path d="M -4 20 L -5 38" stroke="url(#figureGrad)" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M 4 20 L 6 38" stroke="url(#figureGrad)" stroke-width="5.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 灯塔底座软影 -->
+  <ellipse cx="295" cy="155" rx="50" ry="10" fill="url(#lhShadow)"/>
+
+  <!-- 灯塔本体 -->
+  <g transform="translate(295, 100)" filter="url(#dropShadow)">
+    <ellipse cx="0" cy="48" rx="34" ry="6" fill="#6a7e96" opacity="0.4"/>
+
+    <path d="M -13 -10 Q -14 -10 -18 45 Q -18 47 -16 47 L 16 47 Q 18 47 18 45 Q 14 -10 13 -10 Z"
+          fill="url(#towerShade)" stroke="#6a7e96" stroke-width="1" stroke-opacity="0.4"/>
+
+    <path d="M -13 -10 L -14 5 L 14 5 L 13 -10 Z" fill="url(#stripeShade)"/>
+    <path d="M -16 22 L -18 38 L 18 38 L 16 22 Z" fill="url(#stripeShade)"/>
+
+    <path d="M -3 45 L -3 35 Q -3 31 0 31 Q 3 31 3 35 L 3 45 Z" fill="url(#navyGrad)"/>
+
+    <rect x="-17" y="-14" width="34" height="4" rx="2" fill="url(#navyGrad)"/>
+
+    <rect x="-10" y="-30" width="20" height="16" rx="3" fill="url(#lanternInner)" stroke="#6a7e96" stroke-width="1.2" stroke-opacity="0.5"/>
+
+    <path d="M -11 -30 Q -11 -45 0 -45 Q 11 -45 11 -30 Z" fill="url(#navyGrad)"/>
+
+    <line x1="0" y1="-45" x2="0" y2="-53" stroke="#4a5d75" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-55" r="2.5" fill="#c6613f"/>
+  </g>
+</svg>

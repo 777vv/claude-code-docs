@@ -18,7 +18,7 @@
 
 ## 21.2 先探索，再规划，最后写码
 
-参见 [计划模式](/advanced/plan-mode)。
+参见 [计划模式](/claude-code/advanced/plan-mode)。
 
 **什么时候必须先计划**：
 - 任务涉及 3 个以上文件

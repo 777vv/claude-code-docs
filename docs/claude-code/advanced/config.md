@@ -213,4 +213,4 @@ setx ANTHROPIC_API_KEY "sk-ant-..."
 
 ---
 
-下一步：[插件（Plugins）](/advanced/plugins)
+下一步：[插件（Plugins）](/claude-code/advanced/plugins)

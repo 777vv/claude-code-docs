@@ -175,4 +175,4 @@ await server.connect(transport)
 
 ---
 
-下一步：[配置文件详解](/advanced/config)
+下一步：[配置文件详解](/claude-code/advanced/config)

@@ -88,7 +88,7 @@ export ANTHROPIC_API_BASE="https://api.siliconflow.cn/v1"
 export ANTHROPIC_API_KEY="your-siliconflow-key"
 ```
 
-详细国内配置见 [国内模型接入](/china/models)。
+详细国内配置见 [国内模型接入](/claude-code/china/models)。
 
 ## 25.5 搜索失败（ripgrep 问题）
 

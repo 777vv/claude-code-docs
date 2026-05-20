@@ -111,4 +111,4 @@ default → plan → acceptEdits → auto → default → ...
 
 ---
 
-下一步：[CLAUDE.md 与记忆系统](/advanced/memory)
+下一步：[CLAUDE.md 与记忆系统](/claude-code/advanced/memory)

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="hmHelmet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8906d"/>
+      <stop offset="60%" stop-color="#d97757"/>
+      <stop offset="100%" stop-color="#a84f32"/>
+    </linearGradient>
+    <linearGradient id="hmWing" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#f5b59c"/>
+      <stop offset="55%" stop-color="#e8906d"/>
+      <stop offset="100%" stop-color="#c6613f"/>
+    </linearGradient>
+    <linearGradient id="hmBand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f4e1bc"/>
+      <stop offset="100%" stop-color="#d4b582"/>
+    </linearGradient>
+    <radialGradient id="hmHalo" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ffe69a" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#f0b454" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#f0b454" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hmShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景光晕 -->
+  <circle cx="200" cy="190" r="180" fill="url(#hmHalo)"/>
+
+  <!-- 投影 -->
+  <ellipse cx="200" cy="340" rx="115" ry="10" fill="#000" opacity="0.12"/>
+
+  <!-- 后侧翅膀（更深更窄，做衬底） -->
+  <g transform="translate(245, 130)">
+    <path d="M 0 30
+             Q 35 8, 75 18
+             Q 95 25, 95 38
+             Q 75 35, 50 42
+             Q 30 50, 8 55 Z" fill="url(#hmWing)" opacity="0.7"/>
+    <!-- 羽毛分层 -->
+    <path d="M 20 38 Q 45 30, 70 32" stroke="#a84f32" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M 18 48 Q 45 42, 70 42" stroke="#a84f32" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- 前侧翅膀（左，更大更亮） -->
+  <g transform="translate(80, 130)">
+    <path d="M 80 35
+             Q 40 5, 0 20
+             Q -15 30, -10 45
+             Q 15 38, 40 48
+             Q 60 55, 80 55 Z" fill="url(#hmWing)"/>
+    <!-- 羽毛分层 -->
+    <path d="M 60 42 Q 35 32, 10 32" stroke="#a84f32" stroke-width="1.8" fill="none" opacity="0.55"/>
+    <path d="M 62 50 Q 35 44, 10 46" stroke="#a84f32" stroke-width="1.8" fill="none" opacity="0.55"/>
+    <!-- 翅根高光 -->
+    <path d="M 65 30 Q 50 24, 35 26" stroke="#fff" stroke-width="1.2" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- 头盔主体（侧面轮廓，半圆 + 帽檐） -->
+  <!-- 帽冠 -->
+  <path d="M 130 220
+           Q 130 130, 200 120
+           Q 270 130, 270 220 Z" fill="url(#hmHelmet)"/>
+
+  <!-- 头盔底部投影 -->
+  <path d="M 130 220
+           Q 200 235, 270 220
+           L 270 230
+           Q 200 245, 130 230 Z" fill="url(#hmShadow)"/>
+
+  <!-- 帽冠高光 -->
+  <path d="M 150 200 Q 155 155, 195 138" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- 装饰横带 -->
+  <rect x="125" y="208" width="150" height="18" fill="url(#hmBand)"/>
+  <!-- 横带边缘暗线 -->
+  <line x1="125" y1="208" x2="275" y2="208" stroke="#a84f32" stroke-width="1.5" opacity="0.6"/>
+  <line x1="125" y1="226" x2="275" y2="226" stroke="#a84f32" stroke-width="1.5" opacity="0.6"/>
+  <!-- 横带上的浮雕 H -->
+  <text x="200" y="223" font-family="Georgia, serif" font-size="16" font-weight="700" text-anchor="middle" fill="#7a3a1f">H</text>
+
+  <!-- 帽顶尖钉 -->
+  <circle cx="200" cy="120" r="6" fill="#d4b582" stroke="#8a6a3a" stroke-width="1.5"/>
+  <circle cx="200" cy="118" r="2" fill="#fff" opacity="0.6"/>
+
+  <!-- 帽冠的两个铆钉 -->
+  <circle cx="155" cy="215" r="3.5" fill="#f4e1bc" stroke="#7a3a1f" stroke-width="1"/>
+  <circle cx="245" cy="215" r="3.5" fill="#f4e1bc" stroke="#7a3a1f" stroke-width="1"/>
+
+  <!-- 帽檐 -->
+  <path d="M 110 230
+           Q 200 270, 290 230
+           L 285 240
+           Q 200 280, 115 240 Z" fill="url(#hmHelmet)"/>
+  <!-- 帽檐底部加深 -->
+  <path d="M 115 240
+           Q 200 280, 285 240
+           L 280 248
+           Q 200 286, 120 248 Z" fill="#a84f32" opacity="0.55"/>
+</svg>

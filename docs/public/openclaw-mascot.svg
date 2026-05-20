@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <radialGradient id="ocBody" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f5b59c"/>
+      <stop offset="55%" stop-color="#e8906d"/>
+      <stop offset="100%" stop-color="#c6613f"/>
+    </radialGradient>
+    <linearGradient id="ocClaw" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8906d"/>
+      <stop offset="55%" stop-color="#d97757"/>
+      <stop offset="100%" stop-color="#a84f32"/>
+    </linearGradient>
+    <radialGradient id="ocHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe69a" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#f0b454" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f0b454" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ocShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景光晕 -->
+  <circle cx="200" cy="200" r="180" fill="url(#ocHalo)"/>
+
+  <!-- 地面投影 -->
+  <ellipse cx="200" cy="345" rx="95" ry="10" fill="#000" opacity="0.12"/>
+
+  <!-- 左爪（举起，更大） -->
+  <g transform="translate(70, 110) rotate(-18)">
+    <!-- 爪臂 -->
+    <rect x="40" y="50" width="60" height="22" rx="11" fill="url(#ocClaw)"/>
+    <rect x="60" y="78" width="55" height="20" rx="10" fill="url(#ocClaw)"/>
+    <!-- 钳子上下两瓣 -->
+    <path d="M 5 22 Q -10 38, 0 58 Q 15 70, 45 65 L 60 50 L 60 30 Z" fill="url(#ocClaw)"/>
+    <path d="M 5 78 Q -10 62, 0 42 Q 15 30, 45 35 L 60 50 L 60 70 Z" fill="url(#ocClaw)"/>
+    <!-- 钳口阴影 -->
+    <path d="M 12 50 L 50 50" stroke="#7a3a1f" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <!-- 钳尖高光 -->
+    <circle cx="6" cy="38" r="3" fill="#fff" opacity="0.5"/>
+  </g>
+
+  <!-- 右爪（自然垂下，小一点） -->
+  <g transform="translate(280, 200) rotate(20)">
+    <rect x="0" y="0" width="55" height="20" rx="10" fill="url(#ocClaw)"/>
+    <path d="M 50 -15 Q 80 -10, 85 8 Q 80 22, 65 22 L 55 18 L 55 -10 Z" fill="url(#ocClaw)"/>
+    <path d="M 50 35 Q 80 30, 85 12 Q 80 -2, 65 -2 L 55 2 L 55 30 Z" fill="url(#ocClaw)"/>
+    <path d="M 56 10 L 78 10" stroke="#7a3a1f" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- 身体 -->
+  <ellipse cx="200" cy="225" rx="85" ry="70" fill="url(#ocBody)"/>
+  <!-- 身体底部阴影 -->
+  <ellipse cx="200" cy="265" rx="75" ry="25" fill="url(#ocShadow)"/>
+  <!-- 身体高光 -->
+  <ellipse cx="172" cy="195" rx="32" ry="18" fill="#fff" opacity="0.35"/>
+
+  <!-- 尾巴扇 -->
+  <path d="M 160 285 Q 145 320, 165 335 Q 180 335, 190 315 Z" fill="url(#ocBody)"/>
+  <path d="M 240 285 Q 255 320, 235 335 Q 220 335, 210 315 Z" fill="url(#ocBody)"/>
+  <path d="M 175 300 Q 200 335, 225 300 L 220 280 L 180 280 Z" fill="url(#ocBody)"/>
+
+  <!-- 触须（两根细线，柔和弯曲） -->
+  <path d="M 178 162 Q 165 130, 145 115" stroke="#7a3a1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 222 162 Q 235 130, 255 115" stroke="#7a3a1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- 触须末端圆头 -->
+  <circle cx="145" cy="115" r="3.5" fill="#7a3a1f"/>
+  <circle cx="255" cy="115" r="3.5" fill="#7a3a1f"/>
+
+  <!-- 眼白 -->
+  <circle cx="180" cy="210" r="14" fill="#fff"/>
+  <circle cx="220" cy="210" r="14" fill="#fff"/>
+  <!-- 瞳孔 -->
+  <circle cx="183" cy="213" r="7" fill="#2b1810"/>
+  <circle cx="223" cy="213" r="7" fill="#2b1810"/>
+  <!-- 瞳孔高光 -->
+  <circle cx="186" cy="210" r="2.5" fill="#fff"/>
+  <circle cx="226" cy="210" r="2.5" fill="#fff"/>
+
+  <!-- 腮红 -->
+  <ellipse cx="160" cy="235" rx="10" ry="5" fill="#d97757" opacity="0.5"/>
+  <ellipse cx="240" cy="235" rx="10" ry="5" fill="#d97757" opacity="0.5"/>
+
+  <!-- 嘴 -->
+  <path d="M 188 248 Q 200 258, 212 248" stroke="#7a3a1f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

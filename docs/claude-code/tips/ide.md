@@ -129,4 +129,4 @@ macOS 和 Windows 的原生桌面应用，适合不想用终端的用户：
 
 ---
 
-下一步：[故障排除](/tips/troubleshoot)
+下一步：[故障排除](/claude-code/tips/troubleshoot)

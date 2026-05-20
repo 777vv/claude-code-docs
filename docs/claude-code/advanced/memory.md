@@ -99,7 +99,7 @@ Claude 会分析整个项目，自动生成一个起点 CLAUDE.md，包含：
 ```
 
 ::: warning 大小控制
-单个 CLAUDE.md 建议 **小于 200 行**。过长会导致 Claude 忽略其中部分规则。把大段参考资料移入 [Skills](/advanced/skills)，按需加载。
+单个 CLAUDE.md 建议 **小于 200 行**。过长会导致 Claude 忽略其中部分规则。把大段参考资料移入 [Skills](/claude-code/advanced/skills)，按需加载。
 :::
 
 ## 10.5 导入其他文件
@@ -169,4 +169,4 @@ Auto Memory 需要 Claude Code v2.1.59 或更高版本。默认开启。
 
 ---
 
-下一步：[权限与模式](/advanced/permissions)
+下一步：[权限与模式](/claude-code/advanced/permissions)

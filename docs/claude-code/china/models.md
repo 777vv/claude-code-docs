@@ -222,4 +222,4 @@ export ANTHROPIC_API_BASE="https://api.deepseek.com/v1"
 
 ---
 
-下一步：[代理与网络配置](/china/proxy)
+下一步：[代理与网络配置](/claude-code/china/proxy)

@@ -149,4 +149,4 @@ export NODE_TLS_REJECT_UNAUTHORIZED=0
 
 ---
 
-下一步：[GitHub Actions 集成](/integration/github-actions)
+下一步：[GitHub Actions 集成](/claude-code/integration/github-actions)

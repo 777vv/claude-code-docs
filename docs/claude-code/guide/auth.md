@@ -14,7 +14,7 @@
 | Anthropic Console | API Key | 开发者按量付费 |
 | Amazon Bedrock | AWS 凭证 | AWS 托管用户 |
 | Google Vertex AI | GCP 凭证 | GCP 托管用户 |
-| 国内服务商（硅基流动等）| API Key | 国内用户，见[国内适配](/china/models) |
+| 国内服务商（硅基流动等）| API Key | 国内用户，见[国内适配](/claude-code/china/models) |
 
 ## 4.2 首次登录
 
@@ -132,4 +132,4 @@ claude auth status
 
 ---
 
-下一步：[5 分钟快速上手](/guide/quickstart)
+下一步：[5 分钟快速上手](/claude-code/guide/quickstart)

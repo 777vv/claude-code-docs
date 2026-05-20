@@ -115,4 +115,4 @@ PR 描述里解释为什么要做这个改动。
 
 ---
 
-下一步：[技能（Skills）](/advanced/skills)
+下一步：[技能（Skills）](/claude-code/advanced/skills)

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="lhGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ffe69a" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#f0b454" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lhStripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a84f32"/>
+      <stop offset="50%" stop-color="#d97757"/>
+      <stop offset="100%" stop-color="#8f4124"/>
+    </linearGradient>
+    <linearGradient id="lhBody" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cfcabd"/>
+      <stop offset="50%" stop-color="#f4f1e8"/>
+      <stop offset="100%" stop-color="#b6b0a0"/>
+    </linearGradient>
+    <linearGradient id="lhNavy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a7e96"/>
+      <stop offset="100%" stop-color="#4a5d75"/>
+    </linearGradient>
+    <radialGradient id="lhLantern" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#ffe69a"/>
+      <stop offset="100%" stop-color="#f7d56a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 暖色光晕 -->
+  <circle cx="20" cy="12" r="15" fill="url(#lhGlow)"/>
+
+  <!-- 塔身（梯形 + 圆角） -->
+  <path d="M 14 13 Q 14 13 11 34 Q 11 35 12 35 L 28 35 Q 29 35 29 34 Q 26 13 26 13 Z"
+        fill="url(#lhBody)" stroke="url(#lhNavy)" stroke-width="0.6" stroke-opacity="0.55"/>
+
+  <!-- 顶部条纹 -->
+  <path d="M 14 13 L 13.6 17 L 26.4 17 L 26 13 Z" fill="url(#lhStripe)"/>
+
+  <!-- 底部条纹 -->
+  <path d="M 11.8 28 L 11.2 33 L 28.8 33 L 28.2 28 Z" fill="url(#lhStripe)"/>
+
+  <!-- 门（圆顶拱门） -->
+  <path d="M 19 35 L 19 31 Q 19 30 20 30 Q 21 30 21 31 L 21 35 Z" fill="url(#lhNavy)"/>
+
+  <!-- 平台 -->
+  <rect x="13" y="11" width="14" height="2" rx="0.6" fill="url(#lhNavy)"/>
+
+  <!-- 灯室 -->
+  <rect x="16" y="5" width="8" height="6" rx="0.8" fill="url(#lhLantern)" stroke="url(#lhNavy)" stroke-width="0.55" stroke-opacity="0.6"/>
+
+  <!-- 圆顶 -->
+  <path d="M 15.5 5 Q 20 0 24.5 5 Z" fill="url(#lhNavy)"/>
+
+  <!-- 顶尖小球 -->
+  <circle cx="20" cy="1" r="0.9" fill="#c6613f"/>
+</svg>

@@ -53,7 +53,7 @@ Claude 的工作流程：
 4. 你批准后执行修改
 
 ::: warning 改文件前一定会问你
-Claude Code 修改文件前一定会先展示改动并等待你确认。你可以批准单个改动，也可以开启「全部接受」模式（[权限模式](/advanced/permissions)）。
+Claude Code 修改文件前一定会先展示改动并等待你确认。你可以批准单个改动，也可以开启「全部接受」模式（[权限模式](/claude-code/advanced/permissions)）。
 :::
 
 ## 第 4 步：用它操作 Git
@@ -162,4 +162,4 @@ claude
 
 ---
 
-下一步：[基础使用——3 种运行模式和更多技巧](/basics/usage)
+下一步：[基础使用——3 种运行模式和更多技巧](/claude-code/basics/usage)

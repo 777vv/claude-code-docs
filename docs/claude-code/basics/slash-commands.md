@@ -166,8 +166,8 @@ description: 描述这个命令做什么，什么时候该用
 mkdir -p .claude/skills/deploy-check
 ```
 
-详细的 Skills 创建说明见 [第 13 章：技能](/advanced/skills)。
+详细的 Skills 创建说明见 [第 13 章：技能](/claude-code/advanced/skills)。
 
 ---
 
-下一步：[键盘快捷键](/basics/shortcuts)
+下一步：[键盘快捷键](/claude-code/basics/shortcuts)

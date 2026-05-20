@@ -186,4 +186,4 @@ Anthropic 提供了以下开箱即用的技能：
 
 ---
 
-下一步：[子代理（Subagents）](/advanced/subagents)
+下一步：[子代理（Subagents）](/claude-code/advanced/subagents)

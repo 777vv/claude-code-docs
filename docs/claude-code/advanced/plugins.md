@@ -130,4 +130,4 @@ claude plugin install my-awesome-plugin
 
 ---
 
-下一步：[国内模型接入](/china/models)
+下一步：[国内模型接入](/claude-code/china/models)

@@ -144,7 +144,7 @@ claude doctor
 - 账号认证状态
 - 配置文件位置
 
-如果 `claude` 命令找不到，参见 [故障排除](/tips/troubleshoot#安装后-claude-命令找不到)。
+如果 `claude` 命令找不到，参见 [故障排除](/claude-code/tips/troubleshoot#安装后-claude-命令找不到)。
 
 ## 3.8 卸载
 
@@ -187,4 +187,4 @@ rm -f ~/.claude.json
 
 ---
 
-下一步：[登录认证](/guide/auth)
+下一步：[登录认证](/claude-code/guide/auth)

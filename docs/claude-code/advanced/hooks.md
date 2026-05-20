@@ -229,4 +229,4 @@ Claude 可以自动生成配置和脚本。
 
 ---
 
-下一步：[MCP 协议](/advanced/mcp)
+下一步：[MCP 协议](/claude-code/advanced/mcp)

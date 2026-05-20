@@ -122,4 +122,4 @@ claude --dangerously-skip-permissions
 
 ---
 
-下一步：[计划模式](/advanced/plan-mode)
+下一步：[计划模式](/claude-code/advanced/plan-mode)

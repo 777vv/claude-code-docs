@@ -162,4 +162,4 @@ claude --mcp-config ./custom-mcp.json
 
 ---
 
-下一步：[斜杠命令完整参考](/basics/slash-commands)
+下一步：[斜杠命令完整参考](/claude-code/basics/slash-commands)

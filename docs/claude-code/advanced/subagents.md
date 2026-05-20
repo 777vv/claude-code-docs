@@ -137,4 +137,4 @@ Claude Code 预置了以下子代理：
 
 ---
 
-下一步：[钩子（Hooks）](/advanced/hooks)
+下一步：[钩子（Hooks）](/claude-code/advanced/hooks)

@@ -45,7 +45,7 @@ Claude Code **不支持**免费的 claude.ai 账号，必须是以下之一：
 
 ::: tip 推荐方案
 - **个人开发者**：Claude Pro（$20/月）是性价比最高的起点
-- **国内用户**：可以通过 [硅基流动](/china/models) 等服务商使用国内镜像，无需订阅官方
+- **国内用户**：可以通过 [硅基流动](/claude-code/china/models) 等服务商使用国内镜像，无需订阅官方
 - **企业用户**：考虑 Team/Enterprise 或 Bedrock/Vertex 以满足合规要求
 :::
 
@@ -65,8 +65,8 @@ Claude Code 在本地运行工具（读文件、执行命令等），只有**你
 
 Claude Code 官方支持的国家和地区见 [Anthropic 支持地区列表](https://www.anthropic.com/supported-countries)。
 
-**国内用户**：可以通过配置国内服务商（硅基流动等）绕过访问限制，详见 [国内模型接入](/china/models)。
+**国内用户**：可以通过配置国内服务商（硅基流动等）绕过访问限制，详见 [国内模型接入](/claude-code/china/models)。
 
 ---
 
-下一步：[安装 Claude Code](/guide/install)
+下一步：[安装 Claude Code](/claude-code/guide/install)

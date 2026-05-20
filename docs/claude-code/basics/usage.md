@@ -156,4 +156,4 @@ claude --add-dir ~/shared-libs
 
 ---
 
-下一步：[CLI 命令与参数完整参考](/basics/cli)
+下一步：[CLI 命令与参数完整参考](/claude-code/basics/cli)
