@@ -220,21 +220,6 @@ ai-learning-docs/
 
 ---
 
-## 贡献 & 反馈
-
-- 文档错误 / 过时信息：欢迎提 [Issue](https://github.com/777vv/ai-learning-docs/issues) 或 PR
-- 想加新工具：在 issue 里描述，作者会考虑接入优先级
-- 维护流程：见 [`CLAUDE.md`](./CLAUDE.md)（项目级 AI 协作指南）
-
----
-
-## 镜像仓库
-
-- GitHub：[github.com/777vv/ai-learning-docs](https://github.com/777vv/ai-learning-docs)
-- Gitee（国内访问更快）：[gitee.com/vv777/ai-learning-docs](https://gitee.com/vv777/ai-learning-docs)
-
----
-
 ## License
 
 - 文档内容：基于 Anthropic / OpenAI / Nous Research / OpenClaw 等官方公开资料整理，仅供学习参考
