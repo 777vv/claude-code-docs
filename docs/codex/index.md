@@ -15,12 +15,6 @@ hero:
     - theme: alt
       text: 国内模型对接
       link: /codex/china-models/overview
-    - theme: alt
-      text: Github 源码
-      link: https://github.com/777vv/codex-chinese-docs
-    - theme: alt
-      text: Gitee 源码
-      link: https://gitee.com/vv777/codex-chinese-docs
 
 features:
   - icon: 🖥️
