@@ -20,7 +20,11 @@ hero:
       link: /for/general
 ---
 
-<div style="margin-top:64px">
+<div style="text-align:center;margin:-32px auto 0;padding:0 24px">
+  <HomeStatusBar />
+</div>
+
+<div style="margin-top:48px">
 
 ## 选一个最像你的，30 秒找到学习路径
 

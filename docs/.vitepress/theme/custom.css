@@ -352,6 +352,30 @@
 }
 
 /* ============================================================
+   侧边栏：已读章节标识（✓ + 灰）
+   ============================================================ */
+.VPSidebarItem .item.is-read .text,
+.VPSidebar a.is-read {
+  opacity: 0.62;
+}
+
+.VPSidebar a.is-read::after {
+  content: '✓';
+  margin-left: 6px;
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  opacity: 0.7;
+  font-size: 12px;
+  display: inline-block;
+}
+
+/* 当前页(.is-active)即使已读也保留正常对比度 */
+.VPSidebar a.is-read.is-active,
+.VPSidebar a.is-active.is-read {
+  opacity: 1;
+}
+
+/* ============================================================
    kbd 样式
    ============================================================ */
 .vp-doc kbd {
